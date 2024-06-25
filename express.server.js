@@ -5,6 +5,15 @@ const mockData = require('./MOCK_DATA.json')
 
 const app = express()
 
+// how to use middlewares in expreess js 
+
+app.use((req, res, next) => {
+    console.log('This is middleware one');
+    // all the middleware task are fine forword req
+    next()
+    // this may go to next middleware or api paths 
+})
+
 
 app.get('/checkHealth', (req, res) => {
     const html = `<h1> Health is ok </h1>`
