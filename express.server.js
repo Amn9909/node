@@ -6,6 +6,11 @@ const mockData = require('./MOCK_DATA.json')
 const app = express()
 
 
+app.get('/checkHealth', (req, res) => {
+    const html = `<h1> Health is ok </h1>`
+    res.send(html).json()
+})
+
 app.get('/', (req, res) => {
     const html = `<h1> home page </h1>`
     res.send(html).json()
